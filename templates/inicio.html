@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Stock App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Stock App</h1>
+        </div>
+        <div class="header-buttons">
+            <a href="{{ url_for('login') }}" class="logout-button">Cerrar Sesión</a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo-sidebar">
+                <img src="{{ url_for('static', filename='img/logo.jpeg') }}" alt="Logo" class="sidebar-logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('interfaz_bp.usuarios') }}" class="nav-button">Usuarios</a></li>
+                    <li><a href="{{ url_for('interfaz_bp.proveedores') }}" class="nav-button">Proveedores</a></li>
+                    <li><a href="{{ url_for('interfaz_bp.productos') }}" class="nav-button">Productos</a></li>
+                    <li><a href="{{ url_for('interfaz_bp.usuarios') }}" class="nav-button">Clientes</a></li>
+                    <li><a href="{{ url_for('interfaz_bp.ventas') }}" class="nav-button">Ventas</a></li>
+                    <li><a href="{{ url_for('interfaz_bp.inventario') }}" class="nav-button">Inventario</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="content">
+            <h2>Resumen General</h2>
+            <div class="cards-container">
+                <div class="card" id="usuarios">
+                    <img src="{{ url_for('static', filename='img/usuario.jpeg') }}" alt="Usuarios" class="icon">
+                    <div class="card-info">
+                        <h3>Usuarios</h3>
+                        <p><span>10</span></p>
+                    </div>
+                </div>
+                <div class="card" id="proveedores">
+                    <img src="{{ url_for('static', filename='img/proveedores.jpeg') }}" alt="Proveedores" class="icon">
+                    <div class="card-info">
+                        <h3>Proveedores</h3>
+                        <p><span>5</span></p>
+                    </div>
+                </div>
+                <div class="card" id="productos">
+                    <img src="{{ url_for('static', filename='img/productos.jpeg') }}" alt="Productos" class="icon">
+                    <div class="card-info">
+                        <h3>Productos</h3>
+                        <p><span>150</span></p>
+                    </div>
+                </div>
+                <div class="card" id="clientes">
+                    <img src="{{ url_for('static', filename='img/clientes.jpeg') }}" alt="Clientes" class="icon">
+                    <div class="card-info">
+                        <h3>Clientes</h3>
+                        <p><span>200</span></p>
+                    </div>
+                </div>
+                <div class="card" id="ventas">
+                    <img src="{{ url_for('static', filename='img/ventas.jpeg') }}" alt="Ventas" class="icon">
+                    <div class="card-info">
+                        <h3>Ventas</h3>
+                        <p><span>$5000</span></p>
+                    </div>
+                </div>
+                <div class="card" id="categorias">
+                    <img src="{{ url_for('static', filename='img/categorias.jpeg') }}" alt="Categorías" class="icon">
+                    <div class="card-info">
+                        <h3>Categorías</h3>
+                        <p><span>8</span></p>
+                    </div>
+                </div>
+                <div class="card" id="inventario">
+                    <img src="{{ url_for('static', filename='img/inventario.jpeg') }}" alt="Inventario" class="icon">
+                    <div class="card-info">
+                        <h3>Inventario</h3>
+                        <p><span>300</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Stock App. Todos los derechos reservados.</p>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('interfaz_bp.contacto') }}" class="footer-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Animación de entrada
+        $(document).ready(function() {
+            $('.container').hide().fadeIn(1000);
+        });
+    </script>
+</body>
+</html>
